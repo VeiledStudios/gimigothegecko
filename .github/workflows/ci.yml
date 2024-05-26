@@ -41,7 +41,7 @@ jobs:
 
       - name: Run SwiftLint
         run: |
-          swiftlint lint --config .swiftlint.yml
+          swiftlint lint --config .swiftlint.yml $(find . -name "*.swift")
 
       - name: Install fastlane
         run: |
@@ -52,9 +52,9 @@ jobs:
           FASTLANE_USER: ${{ secrets.APPLE_ID }}
           FASTLANE_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
         run: |
-          fastlane run match(type: "development")
+          fastlane authenticate
 
       - name: Build and Test
         run: |
-          fastlane run build_and_test
+          fastlane build_and_test
 
