@@ -49,8 +49,9 @@ jobs:
 
       - name: Authenticate with Apple Developer Account
         env:
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
           FASTLANE_USER: ${{ secrets.APPLE_ID }}
-          FASTLANE_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.TOKEN }}
         run: |
           fastlane authenticate
 

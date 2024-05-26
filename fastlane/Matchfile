@@ -4,6 +4,9 @@ storage_mode("git")
 
 type("development") # The default type, can be: appstore, adhoc, enterprise or development
 
-app_identifier("com.veiledstudio.GimigoTheGecko") # Your app identifier
-username("gimigothegecko@gmail.com") # Your Apple Developer Portal username
+app_identifier("com.veiledstudio.GimigoTheGecko")
+username("gimigothegecko@gmail.com")
+
+# Use the environment variable for GitHub PAT
+git_basic_authorization(ENV['MATCH_GIT_BASIC_AUTHORIZATION'])
 
