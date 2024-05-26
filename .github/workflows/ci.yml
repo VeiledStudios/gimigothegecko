@@ -35,6 +35,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pods-
 
+      - name: Install SwiftLint
+        run: |
+          brew install swiftlint
+
+      - name: Run SwiftLint
+        run: |
+          swiftlint lint --config .swiftlint.yml
+
+      - name: Ensure Derived Data Directory Exists
+        run: mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/
+
       - name: Set Derived Data Permissions
         run: sudo chmod -R 755 /Users/runner/Library/Developer/Xcode/DerivedData/
 
