@@ -11,18 +11,38 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.7'
+
       - name: Install CocoaPods
-        run: gem install cocoapods
-      - name: Install Pods
-        run: pod install
+        run: |
+          sudo gem install cocoapods
+          pod install
+
+      - name: Cache CocoaPods
+        uses: actions/cache@v2
+        with:
+          path: |
+            Pods
+            ~/Library/Caches/CocoaPods
+            **/xcuserdata
+          key: ${{ runner.os }}-pods-${{ hashFiles('Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+
       - name: Set Derived Data Permissions
         run: sudo chmod -R 755 /Users/runner/Library/Developer/Xcode/DerivedData/
-      - name: Build and Test
+
+      - name: Build
         run: |
           xcodebuild clean build -workspace GimigoTheGecko.xcworkspace -scheme GimigoTheGecko -destination 'platform=iOS Simulator,name=iPhone 12' CODE_SIGNING_REQUIRED=NO
+
+      - name: Test
+        run: |
+          xcodebuild test -workspace GimigoTheGecko.xcworkspace -scheme GimigoTheGecko -destination 'platform=iOS Simulator,name=iPhone 12'
 
