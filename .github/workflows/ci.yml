@@ -41,7 +41,7 @@ jobs:
 
       - name: Run SwiftLint
         run: |
-          swiftlint lint --config .swiftlint.yml --path .
+          swiftlint lint --config .swiftlint.yml .
 
       - name: Ensure Derived Data Directory Exists
         run: mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/
