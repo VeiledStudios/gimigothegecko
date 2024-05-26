@@ -41,7 +41,7 @@ jobs:
 
       - name: Run SwiftLint
         run: |
-          swiftlint lint --config .swiftlint.yml **/*.swift
+          swiftlint lint --config .swiftlint.yml
 
       - name: Install fastlane
         run: |
@@ -49,10 +49,10 @@ jobs:
 
       - name: Authenticate with Apple Developer Account
         env:
-          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
           FASTLANE_USER: ${{ secrets.APPLE_ID }}
+          FASTLANE_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
         run: |
-          fastlane run authenticate
+          fastlane run match(type: "development")
 
       - name: Build and Test
         run: |
