@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+      - name: Install CocoaPods
+        run: |
+          gem install cocoapods
+          pod install
+      - name: Set up Xcode
+        run: |
+          sudo xcode-select -s /Applications/Xcode_12.5.app
+      - name: Build and Test
+        run: |
+          xcodebuild clean build -workspace YourProject.xcworkspace -scheme YourScheme -destination 'platform=iOS Simulator,name=iPhone 12' CODE_SIGNING_REQUIRED=NO
+
