@@ -50,8 +50,11 @@ jobs:
         run: sudo chmod -R 755 /Users/runner/Library/Developer/Xcode/DerivedData/
 
       - name: Build
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
         run: |
-          xcodebuild clean build -workspace GimigoTheGecko.xcworkspace -scheme GimigoTheGecko -destination 'platform=iOS Simulator,name=iPhone 12' CODE_SIGNING_REQUIRED=NO
+          xcodebuild clean build -workspace GimigoTheGecko.xcworkspace -scheme GimigoTheGecko -destination 'platform=iOS Simulator,name=iPhone 12' -allowProvisioningUpdates
 
       - name: Test
         run: |
