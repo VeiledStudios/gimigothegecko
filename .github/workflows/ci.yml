@@ -49,6 +49,13 @@ jobs:
       - name: Set Derived Data Permissions
         run: sudo chmod -R 755 /Users/runner/Library/Developer/Xcode/DerivedData/
 
+      - name: Authenticate with Apple Developer Account
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+        run: |
+          echo $APPLE_APP_SPECIFIC_PASSWORD | xcrun altool --validate-app -f path/to/your/app.ipa -u "$APPLE_ID" -p @env:APPLE_APP_SPECIFIC_PASSWORD
+
       - name: Build
         env:
           APPLE_ID: ${{ secrets.APPLE_ID }}
