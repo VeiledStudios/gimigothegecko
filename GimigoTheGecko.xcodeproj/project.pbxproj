@@ -14,6 +14,9 @@
 		48D609092C0301B400670979 /* GimigoTheGeckoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D609082C0301B400670979 /* GimigoTheGeckoTests.swift */; };
 		48D609132C0301B400670979 /* GimigoTheGeckoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D609122C0301B400670979 /* GimigoTheGeckoUITests.swift */; };
 		48D609152C0301B400670979 /* GimigoTheGeckoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D609142C0301B400670979 /* GimigoTheGeckoUITestsLaunchTests.swift */; };
+		497CF2C9474B009209D6A228 /* Pods_GimigoTheGeckoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A05BA996E6E767D6EF346F5 /* Pods_GimigoTheGeckoTests.framework */; };
+		A14360B49E745042498D5572 /* Pods_GimigoTheGecko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B436F785B138F5D235C445F3 /* Pods_GimigoTheGecko.framework */; };
+		E789C95BF9BA552075EAE87E /* Pods_GimigoTheGecko_GimigoTheGeckoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C29E886407657CE6F34560 /* Pods_GimigoTheGecko_GimigoTheGeckoUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28C29E886407657CE6F34560 /* Pods_GimigoTheGecko_GimigoTheGeckoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GimigoTheGecko_GimigoTheGeckoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9A3C3A30606AD4C6D55031 /* Pods-GimigoTheGeckoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimigoTheGeckoTests.debug.xcconfig"; path = "Target Support Files/Pods-GimigoTheGeckoTests/Pods-GimigoTheGeckoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3E4688357BD1C8159E8E3566 /* Pods-GimigoTheGecko-GimigoTheGeckoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimigoTheGecko-GimigoTheGeckoUITests.debug.xcconfig"; path = "Target Support Files/Pods-GimigoTheGecko-GimigoTheGeckoUITests/Pods-GimigoTheGecko-GimigoTheGeckoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		48D608F42C0301B200670979 /* GimigoTheGecko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GimigoTheGecko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D608F72C0301B200670979 /* GimigoTheGeckoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GimigoTheGeckoApp.swift; sourceTree = "<group>"; };
 		48D608F92C0301B200670979 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +50,12 @@
 		48D6090E2C0301B400670979 /* GimigoTheGeckoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GimigoTheGeckoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D609122C0301B400670979 /* GimigoTheGeckoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GimigoTheGeckoUITests.swift; sourceTree = "<group>"; };
 		48D609142C0301B400670979 /* GimigoTheGeckoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GimigoTheGeckoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4A05BA996E6E767D6EF346F5 /* Pods_GimigoTheGeckoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GimigoTheGeckoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64CFF23EBF572FEDBCC4D98F /* Pods-GimigoTheGecko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimigoTheGecko.release.xcconfig"; path = "Target Support Files/Pods-GimigoTheGecko/Pods-GimigoTheGecko.release.xcconfig"; sourceTree = "<group>"; };
+		B436F785B138F5D235C445F3 /* Pods_GimigoTheGecko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GimigoTheGecko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB1C0C7654FB25805AC23114 /* Pods-GimigoTheGecko-GimigoTheGeckoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimigoTheGecko-GimigoTheGeckoUITests.release.xcconfig"; path = "Target Support Files/Pods-GimigoTheGecko-GimigoTheGeckoUITests/Pods-GimigoTheGecko-GimigoTheGeckoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E067C500A932BD047C64C6EF /* Pods-GimigoTheGeckoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimigoTheGeckoTests.release.xcconfig"; path = "Target Support Files/Pods-GimigoTheGeckoTests/Pods-GimigoTheGeckoTests.release.xcconfig"; sourceTree = "<group>"; };
+		F407C1FD99D4B16164268BE4 /* Pods-GimigoTheGecko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimigoTheGecko.debug.xcconfig"; path = "Target Support Files/Pods-GimigoTheGecko/Pods-GimigoTheGecko.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A14360B49E745042498D5572 /* Pods_GimigoTheGecko.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				497CF2C9474B009209D6A228 /* Pods_GimigoTheGeckoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E789C95BF9BA552075EAE87E /* Pods_GimigoTheGecko_GimigoTheGeckoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +93,8 @@
 				48D609072C0301B400670979 /* GimigoTheGeckoTests */,
 				48D609112C0301B400670979 /* GimigoTheGeckoUITests */,
 				48D608F52C0301B200670979 /* Products */,
+				5811F3941577EFFEE8426078 /* Pods */,
+				B57B4653C4D3FF3FDC104B33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +144,29 @@
 			path = GimigoTheGeckoUITests;
 			sourceTree = "<group>";
 		};
+		5811F3941577EFFEE8426078 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F407C1FD99D4B16164268BE4 /* Pods-GimigoTheGecko.debug.xcconfig */,
+				64CFF23EBF572FEDBCC4D98F /* Pods-GimigoTheGecko.release.xcconfig */,
+				3E4688357BD1C8159E8E3566 /* Pods-GimigoTheGecko-GimigoTheGeckoUITests.debug.xcconfig */,
+				DB1C0C7654FB25805AC23114 /* Pods-GimigoTheGecko-GimigoTheGeckoUITests.release.xcconfig */,
+				2C9A3C3A30606AD4C6D55031 /* Pods-GimigoTheGeckoTests.debug.xcconfig */,
+				E067C500A932BD047C64C6EF /* Pods-GimigoTheGeckoTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B57B4653C4D3FF3FDC104B33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B436F785B138F5D235C445F3 /* Pods_GimigoTheGecko.framework */,
+				28C29E886407657CE6F34560 /* Pods_GimigoTheGecko_GimigoTheGeckoUITests.framework */,
+				4A05BA996E6E767D6EF346F5 /* Pods_GimigoTheGeckoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,10 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48D609182C0301B400670979 /* Build configuration list for PBXNativeTarget "GimigoTheGecko" */;
 			buildPhases = (
+				5EDC43526F4A95CA031F077A /* [CP] Check Pods Manifest.lock */,
 				48D608F02C0301B200670979 /* Sources */,
 				48D608F12C0301B200670979 /* Frameworks */,
 				48D608F22C0301B200670979 /* Resources */,
 				48D609212C03034C00670979 /* ShellScript */,
+				847C49A71F036C528E38EA90 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48D6091B2C0301B400670979 /* Build configuration list for PBXNativeTarget "GimigoTheGeckoTests" */;
 			buildPhases = (
+				62BD42A010556881198877B8 /* [CP] Check Pods Manifest.lock */,
 				48D609002C0301B400670979 /* Sources */,
 				48D609012C0301B400670979 /* Frameworks */,
 				48D609022C0301B400670979 /* Resources */,
@@ -170,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48D6091E2C0301B400670979 /* Build configuration list for PBXNativeTarget "GimigoTheGeckoUITests" */;
 			buildPhases = (
+				38EF614803A9A3172585A5DF /* [CP] Check Pods Manifest.lock */,
 				48D6090A2C0301B400670979 /* Sources */,
 				48D6090B2C0301B400670979 /* Frameworks */,
 				48D6090C2C0301B400670979 /* Resources */,
+				C54730700BE34D6823262D0F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,6 +299,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		38EF614803A9A3172585A5DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GimigoTheGecko-GimigoTheGeckoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		48D609212C03034C00670979 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -270,6 +337,84 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		5EDC43526F4A95CA031F077A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GimigoTheGecko-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62BD42A010556881198877B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GimigoTheGeckoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		847C49A71F036C528E38EA90 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GimigoTheGecko/Pods-GimigoTheGecko-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GimigoTheGecko/Pods-GimigoTheGecko-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GimigoTheGecko/Pods-GimigoTheGecko-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C54730700BE34D6823262D0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GimigoTheGecko-GimigoTheGeckoUITests/Pods-GimigoTheGecko-GimigoTheGeckoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GimigoTheGecko-GimigoTheGeckoUITests/Pods-GimigoTheGecko-GimigoTheGeckoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GimigoTheGecko-GimigoTheGeckoUITests/Pods-GimigoTheGecko-GimigoTheGeckoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -437,6 +582,7 @@
 		};
 		48D609192C0301B400670979 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F407C1FD99D4B16164268BE4 /* Pods-GimigoTheGecko.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -466,6 +612,7 @@
 		};
 		48D6091A2C0301B400670979 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64CFF23EBF572FEDBCC4D98F /* Pods-GimigoTheGecko.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -495,8 +642,9 @@
 		};
 		48D6091C2C0301B400670979 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C9A3C3A30606AD4C6D55031 /* Pods-GimigoTheGeckoTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -515,8 +663,9 @@
 		};
 		48D6091D2C0301B400670979 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E067C500A932BD047C64C6EF /* Pods-GimigoTheGeckoTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -535,8 +684,9 @@
 		};
 		48D6091F2C0301B400670979 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E4688357BD1C8159E8E3566 /* Pods-GimigoTheGecko-GimigoTheGeckoUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 48KLH57FRK;
@@ -553,8 +703,9 @@
 		};
 		48D609202C0301B400670979 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB1C0C7654FB25805AC23114 /* Pods-GimigoTheGecko-GimigoTheGeckoUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 48KLH57FRK;
