@@ -43,20 +43,18 @@ jobs:
         run: |
           swiftlint lint --config .swiftlint.yml **/*.swift
 
-      - name: Ensure Derived Data Directory Exists
-        run: mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/
+      - name: Install fastlane
+        run: |
+          sudo gem install fastlane
 
-      - name: Set Derived Data Permissions
-        run: sudo chmod -R 755 /Users/runner/Library/Developer/Xcode/DerivedData/
-
-      - name: Build
+      - name: Authenticate with Apple Developer Account
         env:
-          APPLE_ID: ${{ secrets.APPLE_ID }}
-          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          FASTLANE_USER: ${{ secrets.APPLE_ID }}
         run: |
-          xcodebuild clean build -workspace GimigoTheGecko.xcworkspace -scheme GimigoTheGecko -destination 'platform=iOS Simulator,name=iPhone 12' -allowProvisioningUpdates
+          fastlane run authenticate
 
-      - name: Test
+      - name: Build and Test
         run: |
-          xcodebuild test -workspace GimigoTheGecko.xcworkspace -scheme GimigoTheGecko -destination 'platform=iOS Simulator,name=iPhone 12'
+          fastlane run build_and_test
 
