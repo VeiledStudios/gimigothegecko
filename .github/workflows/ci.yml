@@ -29,8 +29,21 @@ jobs:
         APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
       run: |
         echo "Setting up App Store Connect API Key for code signing"
-        # This is where you can add any setup logic for the App Store Connect API key
-        # e.g., base64 decoding or additional setup steps
+    
+    - name: Create exportOptions.plist for signing
+      run: |
+        echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" > exportOptions.plist
+        echo "<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">" >> exportOptions.plist
+        echo "<plist version=\"1.0\">" >> exportOptions.plist
+        echo "<dict>" >> exportOptions.plist
+        echo "  <key>method</key>" >> exportOptions.plist
+        echo "  <string>app-store</string>" >> exportOptions.plist
+        echo "  <key>teamID</key>" >> exportOptions.plist
+        echo "  <string>${{ secrets.APP_STORE_TEAM_ID }}</string>" >> exportOptions.plist
+        echo "  <key>signingStyle</key>" >> exportOptions.plist
+        echo "  <string>automatic</string>" >> exportOptions.plist
+        echo "</dict>" >> exportOptions.plist
+        echo "</plist>" >> exportOptions.plist
 
     - name: Build the app
       run: |
@@ -38,7 +51,8 @@ jobs:
         -project GimigoTheGecko.xcodeproj \
         -scheme GimigoTheGecko \
         -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest' \
-        -allowProvisioningUpdates
+        -allowProvisioningUpdates \
+        -exportOptionsPlist exportOptions.plist
       working-directory: .
 
     - name: Run tests
