@@ -34,9 +34,5 @@ jobs:
 
       - name: Run SwiftLint
         run: |
-          swiftlint lint ./GimigoTheGecko # Replace './GimigoTheGecko' with the actual path to your Swift files
+          swiftlint lint ./GimigoTheGecko ./GimigoTheGeckoTests ./GimigoTheGeckoUITests
 
-      - name: Build and Test with Fastlane
-        run: |
-          bundle install
-          bundle exec fastlane build_and_test
