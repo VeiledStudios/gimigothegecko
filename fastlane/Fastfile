@@ -8,6 +8,11 @@ platform :ios do
     match(type: "development")
   end
 
+  desc "Run SwiftLint"
+  lane :lint do
+    sh "swiftlint lint --path GimigoTheGecko"
+  end
+
   desc "Build and test the app"
   lane :build_and_test do
     match(type: "development") # Ensure you have match configured for provisioning profiles
