@@ -30,7 +30,7 @@ jobs:
     - name: Authenticate with App Store Connect
       env:
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-        GITHUB_TOKEN: ${{ secrets.MATCH_GIT_TOKEN }} # Use the GitHub token secret
+        MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_TOKEN }}  # Set the token here
       run: |
         fastlane authenticate
       working-directory: .
@@ -42,8 +42,8 @@ jobs:
 
     - name: Build and test the app
       env:
-        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }} # Required for fastlane match to pull profiles
-        GITHUB_TOKEN: ${{ secrets.MATCH_GIT_TOKEN }}  # Use the GitHub token secret
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_TOKEN }}  # Set the token here
       run: |
         fastlane build_and_test
       working-directory: .
