@@ -22,7 +22,7 @@ jobs:
         pod install
       working-directory: .
 
-    - name: Install swiftlint
+    - name: Install swiftlint # SwiftLint installation step
       run: |
         brew install swiftlint
 
@@ -54,4 +54,3 @@ jobs:
       run: |
         fastlane build_and_test
       working-directory: .
-
