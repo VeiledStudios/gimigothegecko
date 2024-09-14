@@ -29,7 +29,6 @@ jobs:
 
     - name: Authenticate with App Store Connect
       env:
-        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }} # This secret should be empty or contain the correct password if any
         MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTH }} # Use this for GitHub access
         GITHUB_TOKEN: ${{ secrets.MATCH_GIT_TOKEN }} # Use this token for access to GitHub certificates repo
       run: |
@@ -43,7 +42,6 @@ jobs:
 
     - name: Build and test the app
       env:
-        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }} # This secret should be empty or contain the correct password if any
         MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTH }} # Use this for GitHub access
       run: |
         fastlane build_and_test
