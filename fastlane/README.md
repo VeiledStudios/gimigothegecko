@@ -23,6 +23,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Authenticate with Apple Developer Portal
 
+### ios lint
+
+```sh
+[bundle exec] fastlane ios lint
+```
+
+Run SwiftLint
+
 ### ios build_and_test
 
 ```sh
