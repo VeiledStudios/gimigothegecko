@@ -25,7 +25,7 @@ jobs:
     - name: Build the app
       run: |
         xcodebuild clean build \
-        -project GimigoTheGecko.xcodeproj \
+        -project Path/To/Correct/GimigoTheGecko.xcodeproj \
         -scheme GimigoTheGecko \
         -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest'
       working-directory: GimigoTheGecko
@@ -33,7 +33,7 @@ jobs:
     - name: Run tests
       run: |
         xcodebuild test \
-        -project GimigoTheGecko.xcodeproj \
+        -project Path/To/Correct/GimigoTheGecko.xcodeproj \
         -scheme GimigoTheGecko \
         -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest'
       working-directory: GimigoTheGecko
