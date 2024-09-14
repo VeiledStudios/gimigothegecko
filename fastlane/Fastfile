@@ -1,12 +1,11 @@
+# Fastfile
+
 default_platform(:ios)
 
 platform :ios do
   desc "Authenticate with Apple Developer Portal"
   lane :authenticate do
-    # Ensure the authorization token is set properly
-    ENV["MATCH_GIT_BASIC_AUTHORIZATION"] = "Basic #{ENV['MATCH_GIT_TOKEN']}" if ENV['MATCH_GIT_TOKEN']
-    
-    # Run match to pull certificates
+    ENV["MATCH_GIT_BASIC_AUTHORIZATION"] = "Basic #{ENV['GITHUB_TOKEN']}" # Ensure it uses the GitHub token secret
     match(type: "development")
   end
 
@@ -17,6 +16,7 @@ platform :ios do
 
   desc "Build and test the app"
   lane :build_and_test do
+    ENV["MATCH_GIT_BASIC_AUTHORIZATION"] = "Basic #{ENV['GITHUB_TOKEN']}" # Ensure it uses the GitHub token secret
     match(type: "development") # Ensure you have match configured for provisioning profiles
     build_app(scheme: "GimigoTheGecko", export_method: "development")
     scan(scheme: "GimigoTheGecko", device: "iPhone 12")
