@@ -43,6 +43,6 @@ jobs:
         FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}  # Your Apple Developer Portal password
         MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTH }}
       run: |
-        fastlane build_and_test
+        fastlane build_and_test --allowProvisioningUpdates # Added flag to allow provisioning updates
       working-directory: .
 
