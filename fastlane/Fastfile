@@ -12,7 +12,7 @@ platform :ios do
     build_app(
       scheme: "GimigoTheGecko", 
       export_method: "development",
-      xcargs: "-allowProvisioningUpdates" # Added flag to allow automatic provisioning updates
+      allowProvisioningUpdates: true # This adds the necessary flag to xcodebuild
     )
     scan(scheme: "GimigoTheGecko", device: "iPhone 12")
   end
