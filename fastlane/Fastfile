@@ -5,7 +5,7 @@ default_platform(:ios)
 platform :ios do
   desc "Authenticate with Apple Developer Portal"
   lane :authenticate do
-    ENV["MATCH_GIT_BASIC_AUTHORIZATION"] = ENV["MATCH_GIT_BASIC_AUTHORIZATION"] || "Basic #{ENV['GITHUB_TOKEN']}" 
+    ENV["MATCH_GIT_BASIC_AUTHORIZATION"] = "Basic #{ENV['GITHUB_TOKEN']}"
     match(type: "development")
   end
 
