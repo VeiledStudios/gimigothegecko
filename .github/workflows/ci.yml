@@ -34,20 +34,18 @@ jobs:
 
       - name: Run SwiftLint
         run: |
-          swiftlint lint --config .swiftlint.yml $(find . -name "*.swift") || true
+          swiftlint
 
-      - name: Install fastlane
+      - name: Install Fastlane
         run: |
           brew install fastlane
 
-      - name: Authenticate with Apple Developer Account
-        env:
-          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
-          FASTLANE_USER: ${{ secrets.APPLE_ID }}
+      - name: Authenticate with Apple Developer Portal
         run: |
-          fastlane authenticate
+          bundle install
+          bundle exec fastlane authenticate
 
-      - name: Build and Test
+      - name: Build and Test the App
         run: |
-          fastlane build_and_test
+          bundle exec fastlane build_and_test
 
