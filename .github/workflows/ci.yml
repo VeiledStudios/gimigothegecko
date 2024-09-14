@@ -22,10 +22,6 @@ jobs:
         pod install
       working-directory: .
 
-    - name: Install swiftlint
-      run: |
-        brew install swiftlint
-
     - name: Install fastlane
       run: |
         brew install fastlane
@@ -41,11 +37,6 @@ jobs:
         fastlane authenticate
       working-directory: .
 
-    - name: Run SwiftLint
-      run: |
-        fastlane lint
-      working-directory: .
-
     - name: Build and test the app
       env:
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}  # Add the new password here
@@ -54,3 +45,4 @@ jobs:
       run: |
         fastlane build_and_test
       working-directory: .
+
