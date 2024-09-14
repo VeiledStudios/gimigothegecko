@@ -30,6 +30,7 @@ jobs:
     - name: Authenticate with App Store Connect
       env:
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_TOKEN }}
       run: |
         fastlane authenticate
       working-directory: .
@@ -42,6 +43,7 @@ jobs:
     - name: Build and test the app
       env:
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }} # Required for fastlane match to pull profiles
+        MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_TOKEN }}
       run: |
         fastlane build_and_test
       working-directory: .
