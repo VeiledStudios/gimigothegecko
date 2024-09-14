@@ -34,5 +34,7 @@ jobs:
 
       - name: Run SwiftLint
         run: |
-          swiftlint lint ./GimigoTheGecko ./GimigoTheGeckoTests ./GimigoTheGeckoUITests
+          swiftlint lint --path ./GimigoTheGecko/GimigoTheGecko
+          swiftlint lint --path ./GimigoTheGecko/GimigoTheGeckoTests
+          swiftlint lint --path ./GimigoTheGecko/GimigoTheGeckoUITests
 
