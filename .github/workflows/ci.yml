@@ -1,13 +1,3 @@
-name: iOS Build and Test
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
 jobs:
   build-and-test:
     runs-on: macos-latest
@@ -29,8 +19,8 @@ jobs:
 
     - name: Authenticate with App Store Connect
       env:
-        MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTH }} # Use this for GitHub access
-        GITHUB_TOKEN: ${{ secrets.MATCH_GIT_TOKEN }} # Use this token for access to GitHub certificates repo
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_TOKEN }}
       run: |
         fastlane authenticate
       working-directory: .
@@ -42,7 +32,8 @@ jobs:
 
     - name: Build and test the app
       env:
-        MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTH }} # Use this for GitHub access
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_TOKEN }}
       run: |
         fastlane build_and_test
       working-directory: .
