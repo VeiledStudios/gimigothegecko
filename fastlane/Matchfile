@@ -7,6 +7,8 @@ type("development") # The default type, can be: appstore, adhoc, enterprise or d
 app_identifier("com.veiledstudio.GimigoTheGecko")
 username("gimigothegecko@gmail.com")
 
-# Use the environment variable for GitHub PAT
-git_basic_authorization(ENV['MATCH_GIT_BASIC_AUTHORIZATION'])
+# Use SSH for Git authentication
+git_branch("master")
+clone_branch_directly(true)
+shallow_clone(false)
 
