@@ -29,14 +29,15 @@ jobs:
         APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
       run: |
         echo "Setting up App Store Connect API Key for code signing"
-    
-    - name: Build the app
+
+    - name: Set up Xcode automatic signing
       run: |
         xcodebuild clean build \
         -project GimigoTheGecko.xcodeproj \
         -scheme GimigoTheGecko \
         -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest' \
-        -allowProvisioningUpdates
+        -allowProvisioningUpdates \
+        -allowProvisioningDeviceRegistration
       working-directory: .
 
     - name: Run tests
