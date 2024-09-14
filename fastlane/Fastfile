@@ -12,8 +12,8 @@ platform :ios do
     build_app(
       scheme: "GimigoTheGecko", 
       export_method: "development",
-      xcargs: "-allowProvisioningUpdates",
-      verbose: true  # Enable verbose output to capture detailed logs
+      xcargs: "-allowProvisioningUpdates",  # Ensuring provisioning updates are allowed
+      workspace: "./GimigoTheGecko.xcworkspace"  # Ensure workspace is defined
     )
     scan(scheme: "GimigoTheGecko", device: "iPhone 12")
   end
