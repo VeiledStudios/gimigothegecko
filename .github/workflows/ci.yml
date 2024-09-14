@@ -5,61 +5,36 @@ on:
     branches:
       - main
   pull_request:
+    branches:
+      - main
 
 jobs:
-  build:
+  build-and-test:
     runs-on: macos-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
+    - name: Set up Ruby environment
+      run: |
+        brew install cocoapods
+        pod install
+      working-directory: GimigoTheGecko
 
-      - name: Install Homebrew
-        run: |
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    - name: Build the app
+      run: |
+        xcodebuild clean build \
+        -project GimigoTheGecko.xcodeproj \
+        -scheme GimigoTheGecko \
+        -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest'
+      working-directory: GimigoTheGecko
 
-      - name: Install SwiftLint
-        run: |
-          brew install swiftlint
+    - name: Run tests
+      run: |
+        xcodebuild test \
+        -project GimigoTheGecko.xcodeproj \
+        -scheme GimigoTheGecko \
+        -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest'
+      working-directory: GimigoTheGecko
 
-      # Commenting out SwiftLint as no lintable files are found
-      # - name: Run SwiftLint
-      #   run: |
-      #     swiftlint lint GimigoTheGecko/GimigoTheGecko
-
-      - name: Set up Xcode
-        run: |
-          sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
-          sudo xcodebuild -license accept
-
-      - name: Install CocoaPods dependencies
-        run: |
-          brew install cocoapods
-          pod install
-        working-directory: GimigoTheGecko
-
-- name: Build the app
-  run: |
-    xcodebuild clean build \
-    -project GimigoTheGecko.xcodeproj \
-    -scheme GimigoTheGecko \
-    -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest'
-  working-directory: GimigoTheGecko
-
-- name: Run tests
-  run: |
-    xcodebuild test \
-    -project GimigoTheGecko.xcodeproj \
-    -scheme GimigoTheGecko \
-    -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest'
-  working-directory: GimigoTheGecko
-	
