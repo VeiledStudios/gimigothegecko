@@ -34,10 +34,9 @@ jobs:
 
       - name: Run SwiftLint
         run: |
-          swiftlint lint --path ./path/to/your/swift/files # Provide the correct path to your Swift source files
+          swiftlint lint ./GimigoTheGecko # Replace './GimigoTheGecko' with the actual path to your Swift files
 
       - name: Build and Test with Fastlane
         run: |
           bundle install
           bundle exec fastlane build_and_test
-
