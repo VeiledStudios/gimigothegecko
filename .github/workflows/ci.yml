@@ -47,19 +47,19 @@ jobs:
           pod install
         working-directory: GimigoTheGecko
 
-      - name: Build the app
-        run: |
-          xcodebuild clean build \
-          -workspace GimigoTheGecko.xcworkspace \
-          -scheme GimigoTheGecko \
-          -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest'
-        working-directory: GimigoTheGecko
+- name: Build the app
+  run: |
+    xcodebuild clean build \
+    -project GimigoTheGecko.xcodeproj \
+    -scheme GimigoTheGecko \
+    -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest'
+  working-directory: GimigoTheGecko
 
-      - name: Run tests
-        run: |
-          xcodebuild test \
-          -workspace GimigoTheGecko.xcworkspace \
-          -scheme GimigoTheGecko \
-          -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest'
-        working-directory: GimigoTheGecko
-
+- name: Run tests
+  run: |
+    xcodebuild test \
+    -project GimigoTheGecko.xcodeproj \
+    -scheme GimigoTheGecko \
+    -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest'
+  working-directory: GimigoTheGecko
+	
