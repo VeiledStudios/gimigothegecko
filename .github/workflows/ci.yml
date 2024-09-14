@@ -37,7 +37,7 @@ jobs:
         env:
           FASTLANE_USER: ${{ secrets.APPLE_ID }}
           FASTLANE_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
-          MATCH_GIT_BASIC_AUTHORIZATION: Basic ${{ secrets.GITHUB_TOKEN }}
+          MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.GITHUB_PAT }}  # Use your PAT token here
         run: |
           fastlane authenticate
 
