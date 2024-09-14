@@ -25,16 +25,14 @@ jobs:
     - name: Build the app
       run: |
         xcodebuild clean build \
-        -project GimigoTheGecko/GimigoTheGecko.xcodeproj \
+        -project /Users/stephentanevski/Projects/GimigoTheGecko/GimigoTheGecko.xcodeproj \
         -scheme GimigoTheGecko \
         -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest'
-      working-directory: GimigoTheGecko
 
     - name: Run tests
       run: |
         xcodebuild test \
-        -project GimigoTheGecko/GimigoTheGecko.xcodeproj \
+        -project /Users/stephentanevski/Projects/GimigoTheGecko/GimigoTheGecko.xcodeproj \
         -scheme GimigoTheGecko \
         -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest'
-      working-directory: GimigoTheGecko
 
