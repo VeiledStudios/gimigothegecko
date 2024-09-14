@@ -1,11 +1,10 @@
 name: iOS Build and Test
 
-# Define the events that trigger the workflow
 on:
-  push:                   # Trigger on push events to branches
+  push:
     branches:
-      - main              # Only run this workflow for the 'main' branch
-  pull_request:           # Trigger on pull requests
+      - main
+  pull_request:
     branches:
       - main
   workflow_dispatch:      # Allows manual triggering of the workflow from the GitHub UI
@@ -31,9 +30,10 @@ jobs:
 
     - name: Authenticate with App Store Connect
       env:
-        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }} # Add the new password here
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }} # Add your secrets
         MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTH }}
         GITHUB_TOKEN: ${{ secrets.MATCH_GIT_TOKEN }}
+        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}  # Add this to pass the Apple Developer password
       run: |
         fastlane authenticate
       working-directory: .
@@ -45,8 +45,9 @@ jobs:
 
     - name: Build and test the app
       env:
-        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }} # Add the new password here
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }} 
         MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTH }}
+        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}  # Ensure this is passed here as well
       run: |
         fastlane build_and_test
       working-directory: .
