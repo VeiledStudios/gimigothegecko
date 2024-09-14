@@ -1,5 +1,3 @@
-# Fastfile
-
 default_platform(:ios)
 
 platform :ios do
@@ -11,7 +9,11 @@ platform :ios do
   desc "Build and test the app"
   lane :build_and_test do
     match(type: "development", readonly: true) # Ensure readonly mode for provisioning profiles
-    build_app(scheme: "GimigoTheGecko", export_method: "development")
+    build_app(
+      scheme: "GimigoTheGecko", 
+      export_method: "development",
+      xcargs: "-allowProvisioningUpdates" # Added flag to allow automatic provisioning updates
+    )
     scan(scheme: "GimigoTheGecko", device: "iPhone 12")
   end
 end
