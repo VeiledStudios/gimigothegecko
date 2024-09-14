@@ -22,6 +22,16 @@ jobs:
         pod install
       working-directory: .
 
+    - name: Set up App Store Connect API Key
+      env:
+        APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
+        APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+        APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+      run: |
+        echo "Setting up App Store Connect API Key for code signing"
+        # This is where you can add any setup logic for the App Store Connect API key
+        # e.g., base64 decoding or additional setup steps
+
     - name: Build the app
       run: |
         xcodebuild clean build \
