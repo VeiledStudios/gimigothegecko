@@ -12,7 +12,7 @@ platform :ios do
     build_app(
       scheme: "GimigoTheGecko", 
       export_method: "development",
-      xcargs: "CODE_SIGNING_ALLOWED=YES -allowProvisioningUpdates"  # Correct usage of xcodebuild args
+      xcargs: "-allowProvisioningUpdates"  # Correctly pass the flag here for xcodebuild
     )
     scan(scheme: "GimigoTheGecko", device: "iPhone 12")
   end
