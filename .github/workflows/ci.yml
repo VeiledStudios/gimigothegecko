@@ -1,39 +1,25 @@
-name: CI
+name: iOS Build and Test
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
 
 jobs:
   build:
+
     runs-on: macos-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3.1'
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install CocoaPods
+      - name: Install Homebrew
         run: |
-          sudo gem install cocoapods
-          pod install
-
-      - name: Cache CocoaPods
-        uses: actions/cache@v2
-        with:
-          path: |
-            Pods
-            ~/Library/Caches/CocoaPods
-            **/xcuserdata
-          key: ${{ runner.os }}-pods-${{ hashFiles('Podfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-pods-
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
       - name: Install SwiftLint
         run: |
@@ -49,9 +35,9 @@ jobs:
 
       - name: Authenticate with Apple Developer Account
         env:
-          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
           FASTLANE_USER: ${{ secrets.APPLE_ID }}
-          MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.TOKEN }}
+          FASTLANE_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          MATCH_GIT_BASIC_AUTHORIZATION: Basic ${{ secrets.GITHUB_TOKEN }}
         run: |
           fastlane authenticate
 
