@@ -22,30 +22,27 @@ jobs:
         pod install
       working-directory: .
 
-    - name: Set up App Store Connect API Key
-      env:
-        APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
-        APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
-        APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+    - name: Install fastlane
       run: |
-        echo "Setting up App Store Connect API Key for code signing"
-
-    - name: Set up Xcode automatic signing
-      run: |
-        xcodebuild clean build \
-        -project GimigoTheGecko.xcodeproj \
-        -scheme GimigoTheGecko \
-        -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest' \
-        -allowProvisioningUpdates \
-        -allowProvisioningDeviceRegistration
+        brew install fastlane
       working-directory: .
 
-    - name: Run tests
+    - name: Authenticate with App Store Connect
+      env:
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
       run: |
-        xcodebuild test \
-        -project GimigoTheGecko.xcodeproj \
-        -scheme GimigoTheGecko \
-        -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest' \
-        -allowProvisioningUpdates
+        fastlane authenticate
+      working-directory: .
+
+    - name: Run SwiftLint
+      run: |
+        fastlane lint
+      working-directory: .
+
+    - name: Build and test the app
+      env:
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }} # Required for fastlane match to pull profiles
+      run: |
+        fastlane build_and_test
       working-directory: .
 
