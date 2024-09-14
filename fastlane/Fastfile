@@ -8,12 +8,6 @@ platform :ios do
     match(type: "development", readonly: true) # Use readonly mode to avoid needing to access the Dev Portal
   end
 
-  desc "Run SwiftLint"
-  lane :lint do
-    # Lint the main app files and the test files
-    sh "swiftlint lint GimigoTheGecko GimigoTheGeckoTests GimigoTheGeckoUITests"
-  end
-
   desc "Build and test the app"
   lane :build_and_test do
     match(type: "development", readonly: true) # Ensure readonly mode for provisioning profiles
