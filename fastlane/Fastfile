@@ -10,7 +10,7 @@ platform :ios do
 
   desc "Run SwiftLint"
   lane :lint do
-    sh "swiftlint lint --path GimigoTheGecko"
+    sh "swiftlint lint GimigoTheGecko"
   end
 
   desc "Build and test the app"
