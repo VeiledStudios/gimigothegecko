@@ -1,33 +1,40 @@
-Skip to content
-Navigation Menu
-VeiledStudios
-/
-gimigothegecko
- 
-Type / to search
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-.github/workflows/ci.yml
- 
-Lint Fix #45
-Jobs
-Run details
-Workflow file for this run
-.github/workflows/ci.yml at 1fe3c21
- /Users/stephentanevski/Projects/GimigoTheGecko/GimigoTheGecko.xcodeproj
- Check failure on line 1 in .github/workflows/ci.yml
+name: iOS Build and Test
 
- 
-GitHub Actions
-/ .github/workflows/ci.yml
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
-Invalid workflow file
-You have an error in your yaml syntax on line 1
-Lint Fix · VeiledStudios/gimigothegecko@1fe3c21 
+jobs:
+  build-and-test:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Ruby environment
+      run: |
+        brew install cocoapods
+        pod install
+      working-directory: GimigoTheGecko
+
+    - name: Build the app
+      run: |
+        xcodebuild clean build \
+        -project GimigoTheGecko/GimigoTheGecko.xcodeproj \
+        -scheme GimigoTheGecko \
+        -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest'
+      working-directory: GimigoTheGecko
+
+    - name: Run tests
+      run: |
+        xcodebuild test \
+        -project GimigoTheGecko/GimigoTheGecko.xcodeproj \
+        -scheme GimigoTheGecko \
+        -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest'
+      working-directory: GimigoTheGecko
+
