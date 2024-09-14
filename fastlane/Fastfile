@@ -10,8 +10,8 @@ platform :ios do
 
   desc "Run SwiftLint"
   lane :lint do
-    # Use '.' if you want to lint the entire project or specify the correct path where your Swift files are located.
-    sh "swiftlint lint --path ."
+    # Use '.' to lint the entire project or specify the correct path where your Swift files are located.
+    sh "swiftlint lint ."
   end
 
   desc "Build and test the app"
