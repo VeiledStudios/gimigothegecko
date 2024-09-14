@@ -12,7 +12,7 @@ platform :ios do
     build_app(
       scheme: "GimigoTheGecko", 
       export_method: "development",
-      xcargs: "-allowProvisioningUpdates",  # Ensuring provisioning updates are allowed
+      xcargs: "-allowProvisioningUpdates",  # Adding flag for provisioning updates
       workspace: "./GimigoTheGecko.xcworkspace"  # Ensure workspace is defined
     )
     scan(scheme: "GimigoTheGecko", device: "iPhone 12")
