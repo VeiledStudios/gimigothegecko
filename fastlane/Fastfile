@@ -12,7 +12,8 @@ platform :ios do
     build_app(
       scheme: "GimigoTheGecko", 
       export_method: "development",
-      xcargs: "-allowProvisioningUpdates"  # Flag to allow provisioning updates
+      xcargs: "-allowProvisioningUpdates",
+      verbose: true  # Enable verbose output to capture detailed logs
     )
     scan(scheme: "GimigoTheGecko", device: "iPhone 12")
   end
