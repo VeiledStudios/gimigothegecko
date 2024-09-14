@@ -33,7 +33,9 @@ jobs:
 
       - name: Run SwiftLint
         run: |
-          swiftlint lint --path GimigoTheGecko
+          swiftlint lint GimigoTheGecko
+          swiftlint lint GimigoTheGeckoTests
+          swiftlint lint GimigoTheGeckoUITests
 
       - name: Set up Xcode
         run: |
