@@ -2,13 +2,15 @@ git_url("https://github.com/VeiledStudios/certificates")
 
 storage_mode("git")
 
-type("development") # The default type, can be: appstore, adhoc, enterprise or development
+type("development") # The default type, can be: appstore, adhoc, enterprise, or development
 
 app_identifier("com.veiledstudio.GimigoTheGecko")
 username("gimigothegecko@gmail.com")
 
-# Use SSH for Git authentication
+# Use SSH or HTTPS for Git authentication
 git_branch("master")
-clone_branch_directly(true)
+
+# Remove clone_branch_directly(true) for the first run.
+# It can be re-added after the branch is created during the initial run.
 shallow_clone(false)
 
