@@ -16,6 +16,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: List files for debugging
+      run: ls -R
+      working-directory: .
+
     - name: Set up Ruby environment
       run: |
         brew install cocoapods
@@ -35,4 +39,3 @@ jobs:
         -project GimigoTheGecko/GimigoTheGecko.xcodeproj \
         -scheme GimigoTheGecko \
         -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest'
-
