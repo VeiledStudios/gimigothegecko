@@ -22,7 +22,7 @@ jobs:
         pod install
       working-directory: .
 
-    - name: Install swiftlint # SwiftLint installation step
+    - name: Install swiftlint
       run: |
         brew install swiftlint
 
