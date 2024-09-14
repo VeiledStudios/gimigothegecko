@@ -5,7 +5,7 @@ default_platform(:ios)
 platform :ios do
   desc "Authenticate with Apple Developer Portal"
   lane :authenticate do
-    match(type: "development") # No need to reset authorization, it's set in the environment
+    match(type: "development", readonly: true) # Use readonly mode to avoid needing to access the Dev Portal
   end
 
   desc "Run SwiftLint"
@@ -15,7 +15,7 @@ platform :ios do
 
   desc "Build and test the app"
   lane :build_and_test do
-    match(type: "development") # Ensure you have match configured for provisioning profiles
+    match(type: "development", readonly: true) # Ensure readonly mode for provisioning profiles
     build_app(scheme: "GimigoTheGecko", export_method: "development")
     scan(scheme: "GimigoTheGecko", device: "iPhone 12")
   end
